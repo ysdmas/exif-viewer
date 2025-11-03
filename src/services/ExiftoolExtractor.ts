@@ -70,7 +70,7 @@ export class ExiftoolExtractor {
     }
 
     try {
-      const result = await parseMetadata(file);
+      const result = await parseMetadata(file) as { success: boolean; data?: string | Record<string, any>; error?: string };
       
       if (!result.success) {
         throw new Error(result.error || ERROR_MESSAGES.PARSE_ERROR);
@@ -85,8 +85,10 @@ export class ExiftoolExtractor {
       
       if (typeof result.data === 'string') {
         parsedData = this.parseExiftoolOutput(result.data);
+      } else if (result.data && typeof result.data === 'object') {
+        parsedData = result.data as Record<string, any>;
       } else {
-        parsedData = result.data;
+        throw new Error(ERROR_MESSAGES.NO_EXIF_ERROR);
       }
 
       if (Object.keys(parsedData).length === 0) {

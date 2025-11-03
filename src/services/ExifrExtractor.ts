@@ -32,7 +32,7 @@ export class ExifrExtractor {
       const arrayBuffer = await file.arrayBuffer();
 
       // Parse EXIF data with comprehensive options based on exifr documentation
-      const exifData = await exifr.parse(arrayBuffer, {
+      const options: any = {
         // Enable all segments
         tiff: true,
         xmp: true,        // XMP metadata
@@ -66,7 +66,9 @@ export class ExifrExtractor {
         sanitize: true,
         mergeOutput: true,
         silentErrors: true
-      });
+      };
+      
+      const exifData = await exifr.parse(arrayBuffer, options);
 
       if (!exifData) {
         throw new Error(ERROR_MESSAGES.NO_EXIF_ERROR);
