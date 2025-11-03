@@ -1,0 +1,214 @@
+/* Root styles */
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* App container */
+.app {
+  width: 100%;
+  padding: 2rem;
+}
+
+/* Header */
+.app-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.app-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Main content */
+.app-main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* File uploader */
+.file-uploader {
+  margin-bottom: 2rem;
+}
+
+.drop-zone {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.drop-zone:hover {
+  border-color: #007bff;
+  background-color: #e9ecef;
+}
+
+.drop-zone.dragging {
+  border-color: #007bff;
+  background-color: #e9ecef;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.1);
+}
+
+.drop-zone-text {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.drop-zone-subtext {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Error message */
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #f5c6cb;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  padding: 2rem;
+}
+
+/* EXIF Display */
+.exif-display {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.exif-display section {
+  margin-bottom: 2rem;
+}
+
+.exif-display h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* File info section */
+.file-info-section .file-name {
+  font-size: 1.1rem;
+  color: #007bff;
+  font-weight: 500;
+}
+
+/* EXIF data section */
+.exif-data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.exif-data-item {
+  display: flex;
+  padding: 0.5rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.exif-key {
+  font-weight: 600;
+  color: #495057;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.exif-value {
+  color: #6c757d;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.no-data {
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+  padding: 2rem;
+}
+
+/* Raw JSON section */
+.raw-json-section {
+  position: relative;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.copy-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.copy-button:hover {
+  background-color: #0056b3;
+}
+
+.json-display {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app {
+    padding: 1rem;
+  }
+
+  .app-header h1 {
+    font-size: 2rem;
+  }
+
+  .drop-zone {
+    padding: 2rem 1rem;
+  }
+
+  .exif-data-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exif-display {
+    padding: 1rem;
+  }
+}
