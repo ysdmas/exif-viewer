@@ -29,6 +29,10 @@ This application is designed with privacy as the top priority:
 3. Metadata is extracted and displayed as JSON
 4. Your original file remains on your device and is never transmitted anywhere
 
+## Try it out
+
+🔗 https://ysdmas.github.io/exif-viewer/
+
 ## Supported Formats
 
 - JPEG/JPG
